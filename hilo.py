@@ -2,9 +2,10 @@ from operator import truediv
 import random
 
 
+
 def main ():
 
-        
+     #Game start   
     current_card = Cards.display_card()
     answer = "y"
     while Choices.points>0 and answer=="y":
@@ -20,14 +21,15 @@ def main ():
 
 
 class Cards:
-     
+    #Picks random cards
     def display_card():
         picked_card = random.randint(1,13)
         return picked_card
 
 class Choices:
+    #Starting points
     points = 300
-
+    #Calculation of points
     def options(previous, current):
         option = input("Higher or lower? [h/l] ")
         if (option == "h") and current>previous:
@@ -43,7 +45,7 @@ class Choices:
 
 class Points:
 
-
+    #User's choice to finish the game or not
     def game_over():
         if Choices.points > 0:
             answer_yes = input("Would you like to keep playing? [y/n]")
